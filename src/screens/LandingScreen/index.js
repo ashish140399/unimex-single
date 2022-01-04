@@ -6,24 +6,12 @@ import NavigationBar from "../../components/Navabar";
 import "./landing.scss";
 
 const cardData = [
-  {
-    image: "col1.png",
-    name: "Degen Protocol",
-    subTitle: "Easy going",
-    subTitleColor: "color_green_light",
-    glowStyle: {
-      background:
-        "radial-gradient(50% 50% at 50% 50%, #F9FFB1 0%, rgba(78, 176, 1, 0) 100%)",
-      mixBlendMode: "screen",
-      filter: "blur(88px)",
-      opacity:0.3
-    },
-    buttonColor: "button_green",
-  },
+ 
   {
     image: "col2.png",
-    name: "Apemex Network",
-    subTitle: "Easy going",
+    name: "Apemex",
+    subTitle: "Margin Trading",
+    link:"https://unimex.gitbook.io/apemex/",
     subTitleColor: "color_brown_light",
     glowStyle: {
       background:
@@ -38,8 +26,9 @@ const cardData = [
   {
     image: "col3.png",
     name: "Farm Space",
-    subTitle: "Easy going",
+    subTitle: "Yield Farming",
     subTitleColor: "color_brown_light",
+    link:"https://unimex.gitbook.io/spacex/",
     glowStyle: {
       background:
         "radial-gradient(50% 50% at 50% 50%, #FFB053 0%, rgba(176, 1, 1, 0) 100%)",
@@ -48,6 +37,21 @@ const cardData = [
       opacity:0.5
     },
     buttonColor: "button_chocolate",
+  },
+  {
+    image: "col1.png",
+    name: "Degen Protocol",
+    subTitle: "Leverage Protocol (2022)",
+    subTitleColor: "color_green_light",
+    link:"https://unimex.gitbook.io/degen-protocol/",
+    glowStyle: {
+      background:
+        "radial-gradient(50% 50% at 50% 50%, #F9FFB1 0%, rgba(78, 176, 1, 0) 100%)",
+      mixBlendMode: "screen",
+      filter: "blur(88px)",
+      opacity:0.3
+    },
+    buttonColor: "button_green",
   },
 ];
 
@@ -69,19 +73,16 @@ export default function LandingScreen() {
               </Col>
               <Col className="pe-5 wow fadeInRight contenttext" data-wow-duration="0.6s" data-wow-delay="0.6s">
                 <h4 className="text-white fw-bold">
-                  The Unimex Network is an interconnected ecosystem of DeFi
-                  applications.
+                The Unimex Network is an interconnected ecosystem of DeFi applications.
                 </h4>
                 <p className="color_green hero_text fs-6 my-3">
-                  The main idea behind the network is to generate mutual
-                  incentive structures for the flow of capital. This is intended
-                  to create a long-term feedback loop where value is
-                  redistributed between ecosystem token stakers and lenders,
-                  from across various chains and products.
+                The main idea behind the network is to generate mutual incentive structures for the flow of capital. This will create a long-term feedback loop where value is redistributed between ecosystem token stakers and lenders, from across various chains and products.
                 </p>
+                <a href="https://unimex.gitbook.io/unimex-network/" target="_blank" style={{color:"#fff",textDecoration:"none"}}>
                 <Button className="text-white fs-6 fw-bold mt-4">
-                  Buy UMX
+                Learn More
                 </Button>
+                </a>
               </Col>
             </Row>
           </Container>
@@ -114,11 +115,13 @@ export default function LandingScreen() {
                 </div>
                 <h4 className="text-white">{card.name}</h4>
                 <p className={card.subTitleColor}>{card.subTitle}</p>
-                <button
-                  className={`btn text-white px-4 py-2 fw-bold mt-4  ${card.buttonColor}`}
-                >
-                  Learn more
-                </button>
+                <a href={card.link} target="_blank" style={{color:"#fff",textDecoration:"none"}}>
+                  <button
+                    className={`btn text-white px-4 py-2 fw-bold mt-4  ${card.buttonColor}`}
+                  >
+                    Learn More
+                  </button>
+                </a>
               </Col>
             ))}
           </Row>
